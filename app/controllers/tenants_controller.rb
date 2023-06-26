@@ -8,7 +8,7 @@ rescue_from ActiveRecord::RecordNotFound, with: :render_record_not_found_respons
     end 
 
     def index 
-        tenants = Tenants.all 
+        tenants = Tenant.all
         render json: tenants
     end 
 
@@ -37,5 +37,4 @@ rescue_from ActiveRecord::RecordNotFound, with: :render_record_not_found_respons
     def render_record_not_found_response 
         render json: {error: "Tenant not found"}
     end 
-
 end 

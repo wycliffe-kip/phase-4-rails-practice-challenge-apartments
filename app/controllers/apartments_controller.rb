@@ -5,6 +5,10 @@ rescue_from ActiveRecord::RecordNotFound, with: :render_record_not_found_respons
     def create 
         apartments = Apartment.create(apartment_params)
         render json: apartments, status: :created
+    end
+    
+    def index 
+        render json: Apartment.all
     end 
 
     def show 
